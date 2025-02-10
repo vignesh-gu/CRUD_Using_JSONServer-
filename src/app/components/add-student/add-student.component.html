@@ -1,0 +1,33 @@
+<h2>Add-students</h2>
+
+<div class="container">
+  <form [formGroup]="addStudent" (ngSubmit)="addStudentData()">
+    <div class="mb-3">
+      <label  class="form-label">Name</label>
+      <input type="text" class="form-control" formControlName = "name">
+      <div *ngIf="addStudent.get('name')?.invalid && addStudent.get('name')?.touched">
+        <span *ngIf="addStudent.get('name')?.errors?.['required']">Name is required!</span>
+        <span *ngIf="addStudent.get('name')?.errors?.['minlength']">Minimum 3 characters required!</span>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Email</label>
+      <input type="email" class="form-control" formControlName = "email">
+      <div *ngIf="addStudent.get('email')?.invalid && addStudent.get('email')?.touched">
+        <span *ngIf="addStudent.get('email')?.errors?.['required']">Email is required!</span>
+        <span *ngIf="addStudent.get('email')?.errors?.['email']">Enter a valid email!</span>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Phone.No</label>
+      <input type="number" class="form-control" formControlName = "phoneNo">
+      <div *ngIf="addStudent.get('phoneNo')?.invalid && addStudent.get('phoneNo')?.touched">
+        <span *ngIf="addStudent.get('phoneNo')?.errors?.['required']">Phone number is required!</span>
+        <span *ngIf="addStudent.get('phoneNo')?.errors?.['pattern']">Enter a valid 10-digit phone number!</span>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="addStudent.invalid" >Submit</button>
+  </form>
+</div>
+
+
