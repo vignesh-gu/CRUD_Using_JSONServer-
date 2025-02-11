@@ -21,8 +21,13 @@
       <td>
          <!-- Delete Icon Button -->
         <button type="button" class="btn btn-danger" (click)="deleteStudentData(data.id)">
-          <i class="fas fa-trash-alt"></i> Delete
+          <i class="fas fa-trash-alt"></i>
         </button>
+        &nbsp;
+        <!-- Edit Icon Button -->
+<button type="button" class="btn btn-primary" [routerLink]="['/edit',data.id]">
+  <i class="fas fa-edit"></i>
+</button>
     </td>
     </tr>
 

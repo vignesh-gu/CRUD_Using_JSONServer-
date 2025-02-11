@@ -1,1 +1,34 @@
-<p>edit-student works!</p>
+<h2>Edit Student</h2>
+
+<div class="container">
+
+<form [formGroup]="editStudent" (ngSubmit)="UpdateStudentData()">
+  <div class="mb-3">
+    <label  class="form-label">Name</label>
+    <input type="text" class="form-control" formControlName="name">
+    <div *ngIf="editStudent.get('name')?.invalid && editStudent?.get('name')?.touched">
+      <span *ngIf="editStudent.get('name')?.errors?.['required']"> Name is required! </span>
+      <span *ngIf="editStudent.get('name')?.errors?.['minLength']">Minimum 3 characters required!</span>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Email</label>
+    <input type="email" class="form-control" formControlName="email">
+    <div *ngIf="editStudent.get('email')?.invalid && editStudent.get('email')?.touched">
+      <span *ngIf="editStudent.get('email')?.errors?.['required']">Email is required!</span>
+      <span *ngIf="editStudent.get('email')?.errors?.['email']">Enter a valid email!</span>"
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Phone.No</label>
+    <input type="number" class="form-control" formControlName="phoneNo">
+    <div *ngIf="editStudent.get('number')?.invalid && editStudent.get('number')?.touched">
+      <span *ngIf="editStudent.get('number')?.errors?.['required']">Phone number is required!</span>
+      <span *ngIf="editStudent.get('number')?.errors?.['pattern']">Enter a valid 10-digit phone number!</span>"
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="editStudent.invalid">Submit</button>
+</form>
+
+</div>

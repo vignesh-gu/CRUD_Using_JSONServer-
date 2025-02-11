@@ -22,4 +22,12 @@ export class StudentService {
     return this.http.delete(`${this.jsonURL}/getAllStudentsList/${id}`)
   }
 
+  getStudentById(id:any){
+    return this.http.get(`${this.jsonURL}/getAllStudentsList/${id}`)
+  }
+
+  UpdateStudentData(id:any,data:any){
+    return this.http.put(`${this.jsonURL}/getAllStudentsList/${id}`,data)
+  }
+
 }
