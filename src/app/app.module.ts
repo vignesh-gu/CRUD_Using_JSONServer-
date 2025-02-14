@@ -10,6 +10,7 @@ import { LoginStudentComponent } from './components/login-student/login-student.
 import { RegistrationStudentComponent } from './components/registration-student/registration-student.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     EditStudentComponent,
     ListStudentComponent,
     LoginStudentComponent,
-    RegistrationStudentComponent
+    RegistrationStudentComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
